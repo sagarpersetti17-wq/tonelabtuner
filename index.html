@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ToneLab – Free Online Guitar &amp; Bass Tuner (all tunings)</title>
+<meta name="description" content="ToneLab is a free online guitar and bass tuner. Tune 6-string guitar and 4 or 5-string bass in standard, drop, open and alternate tunings using your microphone.">
+<meta name="theme-color" content="#0a0e16">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ToneLab – Free Online Guitar &amp; Bass Tuner">
+<meta property="og:description" content="Precision tuning for every string: guitar and bass, every common tuning, right in your browser.">
+<meta property="og:image" content="img/guitar-6.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='46' font-size='40' font-weight='700' text-anchor='middle' fill='%23fff' font-family='Arial'%3ET%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ToneLab","applicationCategory":"MusicApplication","operatingSystem":"Any","description":"Free online guitar and bass tuner with every common tuning.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="waiting">
+
+<header class="top">
+  <div class="brand"><span class="logo">T</span>
+    <div><h2>TONE<i>LAB</i></h2><p class="eyebrow dark">Precision instrument tuner</p></div></div>
+  <div class="eng"><span id="dot"></span><span id="status" class="mono">Audio engine ready</span></div>
+</header>
+
+<section class="hero">
+  <div><p class="eyebrow">Your personal tuning station</p>
+    <h1>Stay in <em>tune.</em></h1><p class="sub">Precision tuning for every string.</p></div>
+  <div class="ref"><p class="eyebrow dark">Reference pitch</p>
+    <div class="a4"><button id="a4m" type="button" aria-label="Lower A4">−</button><b>A4 = <span id="a4">440</span> Hz</b><button id="a4p" type="button" aria-label="Raise A4">+</button></div></div>
+</section>
+
+<section class="controls">
+  <div><p class="mono lab">Instrument</p><div id="inst" class="opts"></div></div>
+  <div><p class="mono lab">Select tuning</p><select id="tuning" aria-label="Tuning"></select></div>
+  <div><p class="mono lab">Tuner mode</p>
+    <div id="mode" class="opts">
+      <button type="button" data-m="auto" aria-pressed="true" class="pill">String</button>
+      <button type="button" data-m="chrom" aria-pressed="false" class="pill">Chromatic</button>
+    </div></div>
+</section>
+
+<main class="grid">
+  <section class="pane">
+    <div class="phead"><div><p class="eyebrow">Live frequency analysis</p><h3 id="ptitle">String tuner</h3></div>
+      <span class="live"><i></i><span id="live">Idle</span></span></div>
+    <div class="scale mono"><span>Flat</span><span class="g">In tune</span><span>Sharp</span></div>
+    <div class="gauge"><div class="zone"></div><div id="ticks"></div><div id="bar" class="needle idle"></div></div>
+    <div class="read"><span id="note">--</span><sub id="oct"></sub></div>
+    <p id="state" class="mono state">Waiting for input</p>
+    <p id="hz" class="mono hz">-- Hz</p>
+    <div class="center"><button id="start" type="button" class="start">Start tuner</button>
+      <p class="small">Microphone access required for live tuning</p></div>
+  </section>
+
+  <section class="pane">
+    <div class="phead"><div><p class="eyebrow">Instrument visualisation</p><h3 id="gt">Six-string guitar</h3></div>
+      <span id="gcount" class="soft">6 strings</span></div>
+    <div class="view stage"><p class="mono tiny">Full instrument view</p><div id="guitar"></div></div>
+    <div class="view"><p class="mono tiny">String detail</p><div id="detail"></div></div>
+    <div class="sel"><div><p class="eyebrow dark">Selected string</p><b id="sel" class="mono">String 6 — E2</b></div>
+      <span id="badge" class="badge mono">Selected</span></div>
+    <div id="cards" class="cards"></div>
+  </section>
+</main>
+
+<footer>
+  <p class="eyebrow">How to use</p><h3>Simple. Accurate. Musical.</h3>
+  <ol class="steps"><li><b>01</b> Select your instrument and tuning.</li><li><b>02</b> Pluck one string at a time.</li><li><b>03</b> Adjust until the indicator turns green.</li></ol>
+  <p class="mono tiny end">ToneLab · made for musicians · version 1.0</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

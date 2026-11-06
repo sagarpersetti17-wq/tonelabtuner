@@ -1,0 +1,106 @@
+:root{color-scheme:dark;--bg:#0a0e16;--panel:#111826;--deep:#0c121d;--line:#202c40;--ink:#e8edf7;--mut:#8593a9;--acc:#38bdf8;--accl:#10283b;--amber:#ffb224;--glow:#22d3ee;--r:18px;--sh:0 10px 30px #0006}
+*{box-sizing:border-box;margin:0}
+html{background:var(--bg)}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 420px at 80% -8%,#15233a,transparent 70%);padding:max(22px,env(safe-area-inset-top)) clamp(16px,4vw,64px) 48px;max-width:1360px;margin:0 auto;-webkit-tap-highlight-color:transparent}
+button,select{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,select:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.mono,.eyebrow{font-family:'Space Mono',monospace}
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.eyebrow.dark,.lab{color:var(--mut)}
+.lab{font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.tiny{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.soft{color:var(--mut);font:12px 'Space Mono',monospace;text-transform:uppercase;letter-spacing:.1em}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,#38bdf8,#2563eb);color:#06101d;display:grid;place-items:center;font-size:22px;font-weight:700;box-shadow:0 6px 18px #2563eb66}
+h2{font-size:20px;letter-spacing:.14em}
+h2 i{color:var(--acc);font-style:normal}
+.brand .eyebrow{font-size:9px;margin-top:3px;font-weight:400;color:var(--mut)}
+.eng{display:flex;gap:10px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
+#dot{width:9px;height:9px;border-radius:50%;background:#3a465c}
+#dot.on{background:var(--glow);box-shadow:0 0 9px var(--glow)}
+
+.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin:clamp(30px,6vw,56px) 0 30px}
+h1{font-size:clamp(44px,8vw,80px);line-height:1;letter-spacing:-.035em;margin:16px 0 12px}
+h1 em{font-style:normal;background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:18px;color:var(--mut)}
+.ref{text-align:right}
+.a4{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:8px;font:700 17px 'Space Mono',monospace}
+.a4 button{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:var(--panel);font-size:18px;line-height:1}
+
+.controls,.pane{background:linear-gradient(180deg,#131c2c,var(--panel));border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.controls{display:flex;flex-wrap:wrap;gap:24px 52px;align-items:flex-start;padding:24px 28px}
+.opts{display:flex;gap:6px;flex-wrap:wrap;background:var(--deep);border:1px solid var(--line);border-radius:12px;padding:4px}
+.opts button{border:0;background:none;font:700 11px 'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);padding:11px 16px;border-radius:9px}
+.opts button[aria-pressed=true]{background:#1b2a42;color:var(--acc);box-shadow:inset 0 0 0 1px #2c4566}
+select{width:min(300px,80vw);padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--deep);font-size:16px}
+
+.grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;margin-top:24px}
+.pane{padding:28px}
+.phead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+h3{font-size:26px;font-weight:700;margin-top:8px;letter-spacing:-.01em}
+.live{display:flex;gap:8px;align-items:center;font:700 11px 'Space Mono',monospace;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.live i{width:9px;height:9px;border-radius:50%;background:#3a465c}
+.running .live i{background:var(--glow);box-shadow:0 0 9px var(--glow)}
+.running .live{color:var(--glow)}
+
+.scale{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-top:36px}
+.scale .g{color:var(--acc);font-weight:700}
+.gauge{position:relative;height:130px;border-bottom:2px solid #3a465c;margin-top:10px}
+#ticks i{position:absolute;bottom:0;width:1px;height:9px;background:#3a465c}
+#ticks i.big{height:18px;background:#6b7a93}
+#ticks i.zero{background:var(--glow);height:30px;width:2px}
+.zone{position:absolute;left:45%;width:10%;top:0;bottom:0;background:linear-gradient(#0f3a4a,transparent)}
+.needle{position:absolute;bottom:0;left:50%;width:4px;height:106px;border-radius:2px;background:var(--amber);transform:translateX(-50%);box-shadow:0 0 12px #ffb22466}
+.needle.idle{background:#354158;box-shadow:none}
+.tuned .needle{background:var(--glow);box-shadow:0 0 16px var(--glow)}
+.read{text-align:center;margin-top:30px;line-height:1}
+#note{font-size:clamp(84px,12vw,124px);font-weight:700;letter-spacing:-.03em}
+.waiting #note{color:#3a465c}
+.tuned #note{color:var(--glow);text-shadow:0 0 24px #22d3ee66}
+.read sub{font:20px 'Space Mono',monospace;color:var(--mut);margin-left:4px}
+.state{text-align:center;margin-top:24px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);min-height:1.4em}
+.hz{text-align:center;margin-top:14px;font-size:17px}
+.center{text-align:center;margin-top:30px}
+.start{border:0;border-radius:12px;background:linear-gradient(145deg,#38bdf8,#2563eb);color:#04101c;padding:16px 40px;font:700 13px 'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 8px 22px #2563eb55}
+.start.on{background:#1b2536;color:var(--ink);box-shadow:inset 0 0 0 1px #34425a}
+.small{font-size:13px;color:var(--mut);margin-top:16px}
+
+.view{border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:22px;background:var(--deep)}
+.view.stage{background:radial-gradient(560px 460px at 50% 42%,#fff,#d6dde8 90%);border-color:#2a3650}
+.stage .tiny{color:#5b6779}
+#guitar{display:flex;justify-content:center;margin-top:6px}
+#guitar svg{display:block;overflow:visible}
+#detail{margin-top:8px}#detail svg{width:100%;display:block}
+.sel{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:24px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+#sel{display:block;margin-top:8px;font-size:20px;color:var(--acc);text-transform:uppercase}
+.badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);background:var(--accl);border-radius:999px;padding:5px 12px}
+.badge:empty{display:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:10px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--deep);padding:14px 8px;text-align:center;transition:.15s}
+.card b{display:block;font:700 26px 'Space Mono',monospace}
+.card small{font-size:12px;color:var(--mut)}
+.card.on{border-color:var(--acc);background:var(--accl)}
+.card.on b{color:var(--acc)}
+.card.ok{border-color:var(--glow);background:#0a3040;box-shadow:0 0 14px #22d3ee44}.card.ok b{color:var(--glow)}
+
+/* photo overlays: strings and tuner knobs glow when active */
+.sg,.ds{cursor:pointer}
+.sg .str{stroke:transparent}
+.sg .ring{fill:none;stroke:transparent}
+.sg text{font:700 18px 'Space Mono',monospace;fill:#1c2433;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+.sg.on .str,.sg.on .ring{stroke:var(--glow);filter:drop-shadow(0 0 5px var(--glow))}
+.sg.ok .str,.sg.ok .ring{filter:drop-shadow(0 0 10px var(--glow))}
+.sg.on text{fill:#0b7a99}
+.ds .s{stroke:#c3cad6}
+.ds text{font:11px 'Space Mono',monospace;fill:#8593a9}
+.ds.on .s{stroke:var(--glow);filter:drop-shadow(0 0 3px var(--glow))}
+.ds.on text{fill:var(--acc);font-weight:700}
+#detail .end{font:9px 'Space Mono',monospace;fill:#8593a9}
+
+footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.steps{display:flex;flex-wrap:wrap;gap:14px 44px;list-style:none;padding:0;margin:22px 0}
+.steps b{font:700 13px 'Space Mono',monospace;color:var(--acc);margin-right:8px}
+.end{margin-top:30px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.ref{text-align:left}.a4{justify-content:flex-start}.pane,.controls{padding:20px}}
